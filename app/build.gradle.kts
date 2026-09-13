@@ -7,14 +7,16 @@ plugins {
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
-// 签名配置从 keystore.properties 读取（该文件已在 .gitignore 里）
+// 签名配置：本地读 keystore.properties（已在 .gitignore 里），CI 从环境变量注入
 val keystorePropsFile = rootProject.file("keystore.properties")
 val keystoreProps = Properties().apply {
     if (keystorePropsFile.exists()) {
         keystorePropsFile.inputStream().use { load(it) }
     }
 }
-val hasSigning = keystorePropsFile.exists()
+val signingStoreFile = (keystoreProps.getProperty("storeFile") ?: System.getenv("KEYSTORE_FILE"))
+    ?.let { rootProject.file(it) }
+val hasSigning = signingStoreFile?.exists() == true
 
 android {
     namespace = "top.aryun.token"
@@ -24,17 +26,17 @@ android {
         applicationId = "top.aryun.token"
         minSdk = 24
         targetSdk = 36
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = providers.gradleProperty("appVersionCode").orNull?.toIntOrNull() ?: 1
+        versionName = providers.gradleProperty("appVersionName").orNull ?: "1.0"
     }
 
     signingConfigs {
         if (hasSigning) {
             create("release") {
-                storeFile = rootProject.file(keystoreProps.getProperty("storeFile"))
-                storePassword = keystoreProps.getProperty("storePassword")
-                keyAlias = keystoreProps.getProperty("keyAlias")
-                keyPassword = keystoreProps.getProperty("keyPassword")
+                storeFile = signingStoreFile
+                storePassword = keystoreProps.getProperty("storePassword") ?: System.getenv("STORE_PASSWORD")
+                keyAlias = keystoreProps.getProperty("keyAlias") ?: System.getenv("KEY_ALIAS")
+                keyPassword = keystoreProps.getProperty("keyPassword") ?: System.getenv("KEY_PASSWORD")
             }
         }
     }
