@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="top.aryun.token.data.TokenExtractorTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2026-09-13T10:56:38.455Z" hostname="DESKTOP-P1SNO76" time="0.311">
+  <properties/>
+  <testcase name="autoCapture_detectsLoginTransition" classname="top.aryun.token.data.TokenExtractorTest" time="0.197"/>
+  <testcase name="harvest_mergesJsResultWithNativeCookies" classname="top.aryun.token.data.TokenExtractorTest" time="0.02"/>
+  <testcase name="autoCapture_baselineIsStableForQuotedLocalStorageValues" classname="top.aryun.token.data.TokenExtractorTest" time="0.018"/>
+  <testcase name="resolve_returnsNullWhenNothingMatchesAndFallbackDisabled" classname="top.aryun.token.data.TokenExtractorTest" time="0.0"/>
+  <testcase name="resolve_fallsBackToFuzzyTokenName" classname="top.aryun.token.data.TokenExtractorTest" time="0.015"/>
+  <testcase name="parseCookieHeader_splitsPairsAndTrims" classname="top.aryun.token.data.TokenExtractorTest" time="0.001"/>
+  <testcase name="resolve_fallsBackToWholeCookieHeader" classname="top.aryun.token.data.TokenExtractorTest" time="0.019"/>
+  <testcase name="collectJs_embedsKeysAndDeepFlag" classname="top.aryun.token.data.TokenExtractorTest" time="0.023"/>
+  <testcase name="autoCapture_doesNotFireWhileNothingChanges" classname="top.aryun.token.data.TokenExtractorTest" time="0.001"/>
+  <testcase name="parseCookieHeader_handlesBlankInput" classname="top.aryun.token.data.TokenExtractorTest" time="0.0"/>
+  <testcase name="strongHits_skipsBlankValues" classname="top.aryun.token.data.TokenExtractorTest" time="0.001"/>
+  <testcase name="resolve_matchesKeyCaseInsensitively" classname="top.aryun.token.data.TokenExtractorTest" time="0.0"/>
+  <testcase name="autoCapture_firesWhenAlreadyLoggedIn" classname="top.aryun.token.data.TokenExtractorTest" time="0.001"/>
+  <testcase name="strongHits_returnsOnlyLoginOnlyKeysInPriorityOrder" classname="top.aryun.token.data.TokenExtractorTest" time="0.002"/>
+  <testcase name="harvest_toleratesMissingOrNullJsResult" classname="top.aryun.token.data.TokenExtractorTest" time="0.002"/>
+  <testcase name="resolve_prefersHighestPriorityKey" classname="top.aryun.token.data.TokenExtractorTest" time="0.003"/>
+  <testcase name="normalizeValue_unwrapsJsonStringsAndWhitespace" classname="top.aryun.token.data.TokenExtractorTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

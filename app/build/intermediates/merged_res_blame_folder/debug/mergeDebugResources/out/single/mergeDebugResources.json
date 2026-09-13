@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\top.aryun.token.app-debug-35:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\top.aryun.token.app-main-37:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "top.aryun.token.app-debug-35:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "top.aryun.token.app-main-37:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "top.aryun.token.app-debug-35:/drawable_ic_cookie_mono.xml.flat",
+        "source": "top.aryun.token.app-main-37:/drawable/ic_cookie_mono.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\top.aryun.token.app-debug-35:\\drawable_ic_cookie_bg.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\top.aryun.token.app-main-37:\\drawable\\ic_cookie_bg.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\top.aryun.token.app-debug-35:\\drawable_ic_launcher_legacy.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\top.aryun.token.app-main-37:\\drawable\\ic_launcher_legacy.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\top.aryun.token.app-debug-35:\\mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\top.aryun.token.app-main-37:\\mipmap-anydpi\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\top.aryun.token.app-debug-35:\\drawable_ic_cookie_fg.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\8.13\\top.aryun.token.app-main-37:\\drawable\\ic_cookie_fg.xml"
+    }
+]

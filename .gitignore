@@ -1,17 +1,17 @@
+# 注意：本仓库按所有者要求，把以下内容一并纳入版本控制：
+#   app/build/          构建产物（每次构建都会变化）
+#   .gradle/            Gradle 本机缓存
+#   local.properties    本机 Android SDK 路径
+#   keystore/           应用签名私钥
+#   keystore.properties 签名密码（明文）
+#
+# 警告：keystore/getcookie.jks 与 keystore.properties 等同于本应用的签名凭证。
+# 本仓库必须保持私有，且不得添加外部协作者；一旦公开或分享，等同于密钥泄露，
+# 他人可签发能覆盖安装的伪造安装包。
+
 *.iml
-.gradle/
-/local.properties
 /.idea/
 .DS_Store
-/build
-/app/build
 /captures
 .externalNativeBuild
 .cxx
-local.properties
-
-# 签名文件，不要提交
-keystore.properties
-/keystore/
-*.jks
-*.keystore

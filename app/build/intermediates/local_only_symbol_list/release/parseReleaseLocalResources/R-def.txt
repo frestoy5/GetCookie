@@ -1,0 +1,8 @@
+R_DEF: Internal format may change without notice
+local
+drawable ic_cookie_bg
+drawable ic_cookie_fg
+drawable ic_cookie_mono
+mipmap ic_launcher
+string app_name
+style Theme.GetCookie

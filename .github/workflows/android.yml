@@ -34,33 +34,16 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Decode signing keystore
-        env:
-          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
-          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+      - name: Check signing material
         run: |
-          missing=""
-          [ -z "$KEYSTORE_BASE64" ] && missing="$missing KEYSTORE_BASE64"
-          [ -z "$STORE_PASSWORD" ] && missing="$missing STORE_PASSWORD"
-          [ -z "$KEY_ALIAS" ] && missing="$missing KEY_ALIAS"
-          [ -z "$KEY_PASSWORD" ] && missing="$missing KEY_PASSWORD"
-          if [ -n "$missing" ]; then
-            echo "::error::缺少仓库 Secret:$missing（Settings → Secrets and variables → Actions 添加后重新运行）"
-            exit 1
-          fi
-          echo "$KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/getcookie.jks"
+          test -f keystore.properties || { echo "::error::缺少 keystore.properties"; exit 1; }
+          test -f keystore/getcookie.jks || { echo "::error::缺少 keystore/getcookie.jks"; exit 1; }
+          echo "仓库内签名文件就绪"
 
       - name: Run unit tests
         run: ./gradlew test
 
       - name: Build signed release APK
-        env:
-          KEYSTORE_FILE: ${{ runner.temp }}/getcookie.jks
-          STORE_PASSWORD: ${{ secrets.STORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
         run: |
           ./gradlew assembleRelease \
             -PappVersionCode=${{ github.run_number }} \
